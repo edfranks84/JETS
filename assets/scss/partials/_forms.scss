@@ -1,0 +1,36 @@
+input, textarea{
+	padding: 0.8em;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	height: 100%;
+	font-family: $main-font;
+	font-size: ms(0);
+	background-image: none;
+	-webkit-appearance: none;
+    -webkit-border-radius:0; 
+    border-radius:0;
+}
+
+.form_submit{
+	input{
+		background-color: $base-color;
+		color: #fff;
+		text-transform: uppercase;
+		font-family: $cond-font-bold;
+		text-align: center;
+		border: none;
+		cursor: pointer;
+		width: 100%;
+		line-height: 1;
+		border-radius: 0;
+		&:hover{
+			background-color: $base-color-dark;
+		}
+		&[type="submit"]{
+			border-radius: 0;
+		}
+	}
+}
+button{
+	border-radius: 0;
+}

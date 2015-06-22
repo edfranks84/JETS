@@ -1,0 +1,237 @@
+footer{
+	padding: 2em 0.5em;
+	@include respond-to(480){
+		padding-top: 3em;
+		padding-bottom: 1.5em;
+	}
+	@include site-container;
+	@include clearfix;
+	>div{
+		margin-bottom: 1em;
+		@include respond-to(480){
+			@include span(6 of 12);
+		}
+		@include respond-to(920){
+			@include span(3 of 12);
+		}
+	}
+	.on-course{
+		@include respond-to(480){
+			@include span(6 of 12 last);
+		}
+		@include respond-to(920){
+			@include span(3 of 12);
+		}
+	}
+	.friends{
+		@include respond-to(480){
+			@include span(6 of 12 last);
+		}
+		@include respond-to(920){
+			@include span(3 of 12 last);
+		}
+	}
+	h6{
+		text-transform: uppercase;
+		border-bottom: 1px solid currentColor;
+		margin-bottom: 1em;
+	}
+}
+.contact{
+	b{
+		margin-right: 0.3em;
+	}
+	p{
+		margin-bottom: 0;
+	}
+	.address{
+		margin-bottom: 0.5em;
+	}
+}
+.associate-images{
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+	.associate-img{
+		display: table-cell;
+		vertical-align: middle;
+		padding: 1em 0;
+		img{
+			max-height: 5em;
+		}
+	}
+	
+}
+.on-course{
+	
+	ul{
+		font-size: 14px;
+		@include clearfix;
+	}
+	li{
+		padding-bottom: 0.2em;
+		margin-bottom: 0.2em;
+		border-bottom: 1px solid #ccc;
+		@include clearfix;
+		&:last-child{
+			border: none;
+			padding-bottom: 0;
+			margin-bottom: 0;
+		}
+	}
+	.date, .location{
+		display: inline-block;
+		font-family: $cond-font;
+	}
+	.date{
+		width: 30%;
+	}
+	.location{
+		float: right;
+		width: 70%;
+	}
+	a{
+		margin-top: 2em;
+		display: block;
+	}
+}
+.latest-tweets{
+	@include respond-to(480){
+		padding-top: 3em;
+	}
+	@include respond-to(920){
+		padding-top: 0;
+	}
+	p{
+		margin-bottom: 0;
+	}
+	ul{
+		font-size: 14px;
+	}
+	li:first-child{
+		margin-bottom: 0.2em;
+		padding-bottom: 0.2em;
+		border-bottom: 1px solid #ccc;
+	}
+}
+
+.friends-carousel{
+	height: 6em;
+	padding: 0 2em;
+	// .owl-stage-outer{
+	// 	padding: 0 2em;
+	// }
+	.owl-item{
+		text-align: center;
+		padding: 0 0.5em;
+		line-height: 6em;
+		height: 100%;
+	}
+	.friends-slide{
+		height: 100%;
+		line-height: 6em;
+		img{
+			max-height: 6em;
+			height: auto;
+			width: auto!important;
+			line-height: 6em;
+			display: inline-block!important;
+			vertical-align: middle;
+		}
+	}
+	.owl-controls{
+		width: 100%;
+	}
+	
+	.owl-nav{
+		width: 100%;
+	}
+
+	.owl-prev{
+		position: absolute;
+		left: 0;
+		top: 43%;
+		height: 1.2em;
+		width: 1.2em;
+	}
+	.owl-next{
+		position: absolute;
+		right: 0;
+		top: 43%;
+		height: 1.2em;
+		width: 1.2em;
+	}
+}
+.friends{
+	p{
+		text-align: right;
+		font-size: ms(-1);
+	}
+	.social-footer{
+		text-align: center;
+		margin: 1em 0;
+		width: 100%;
+		@include clearfix;
+		@include respond-to(480){
+			text-align: right;
+		}
+		>div{
+			//height: 4em;
+			//width: 4em;
+			//padding: 1.5em;
+			display: inline-block;
+			margin-right: -5px;
+			line-height: 0;
+			width: 25%;
+			height: 0;
+			padding-bottom: 25%;
+			position: relative;
+			&:hover{
+				z-index: 3;
+				transform: scale(1.1);
+				transition: all 200ms ease;
+			}
+		
+			&.facebook{
+				background: $facebook;
+				&:hover{
+					background: lighten(saturate($facebook, 10%),5%);
+				}
+			}
+			&.twitter{
+				background: $twitter;
+				&:hover{
+					background: lighten(saturate($twitter, 10%),5%);
+				}
+			}
+			&.youtube{
+				background: $youtube;
+				&:hover{
+					background: lighten(saturate($youtube, 10%),5%);
+				}
+			}
+			&.mail{
+				background: $alt-color;
+				&:hover{
+					background: lighten(saturate($alt-color, 10%),5%);
+				}
+			}
+		}
+		svg{
+			fill: #fff;
+			height: 1.5em;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		a{
+			display: block;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			left: 0;
+		}
+	}
+}

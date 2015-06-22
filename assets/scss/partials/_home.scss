@@ -1,0 +1,706 @@
+.hero-slider{
+	position: relative;
+	overflow: hidden;
+	height: 16em;
+	@include site-container;
+	@include respond-to(350){
+		height: 18em;
+	}
+	@include respond-to(650){
+		height: auto;
+	}
+	.previewFrame &{
+		height: 500px;
+	}
+}
+.hero-slide, .hero-carousel, .owl-stage-outer, .owl-stage, .owl-item{
+	height: 100%;
+	@include respond-to(650){
+		height: auto;
+	}
+}
+.hero-carousel, .testimonial-carousel{
+	.owl-controls {
+	    text-align: center;
+	    position: absolute;
+	    bottom: 0.5em;
+	    left: 50%;
+	    transform: translateX(-50%);
+	    width: 100%;
+	}
+}
+.owl-theme .owl-dots .owl-dot {
+    display: inline-block;
+}
+.owl-theme .owl-dots .owl-dot span {
+    background: #fff none repeat scroll 0 0;
+    display: block;
+    height: 0.2em;
+    margin: 0 0.3em;
+    transition: opacity 200ms ease 0s;
+    width: 2em;
+    @include respond-to(920){
+    	width: 3em;
+    }
+}
+.owl-theme .owl-dots .owl-dot span:hover{
+	background: #ccc;
+}
+.owl-theme .owl-dots .owl-dot.active span{
+	background: $alt-color;
+}
+
+.hero-text{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-20%);
+	left: 0;
+	//background: rgba($base-color, 0.9);
+	//padding: 2em 1.5em;
+	z-index: 2;
+	overflow: hidden;
+	h1{
+		color: #fff;
+		text-transform: uppercase;
+		font-size: ms(2);
+		margin: 0;
+		line-height: 1.1;
+	}
+	&::before {
+	    background: rgba($base-color, 0.9);
+	    content: "";
+	    display: block;
+	    height: 100%;
+	    left: 0;
+	    position: absolute;
+	    transform: skew(-10deg);
+	    transform-origin: 0 0 0;
+	    width: 96%;
+	    z-index: -1;
+	    @include respond-to(480){
+			width: 100%;
+	    }
+	}
+	@include respond-to(350){
+		h1{
+			font-size: ms(3);
+		}
+	}
+	@include respond-to(920){
+		h1{
+			font-size: ms(4);
+		}
+	}
+	@include respond-to(1200){
+		h1{
+			font-size: ms(5);
+		}
+	}
+}
+
+
+.hero-title {
+    max-width: 95%;
+    padding: 0.75em 1.5em 0.75em 1em;
+    padding: 1.5em 3em 1.5em 2em;
+	@include respond-to(350){
+		max-width: 15.5em;
+		max-width: 34em;
+    }
+    @include respond-to(920){
+		padding: 1.2em 2em 1.2em 1.5em;
+		padding: 2.4em 4em 2.4em 3em;
+    }
+}
+
+.social-banner{
+	@include site-container;
+	@include clearfix;
+	position: relative;
+	margin: 1.5em auto;
+	background: $grey;
+	height: 5.6em;
+	@include respond-to(480){
+		height: 6.56em;
+	}
+	h4,h6,p{
+		color: #fff;
+		margin-bottom: 0;
+	}
+	h4,h6{
+		font-family: $cond-font;
+	}
+
+}
+.social-title{
+	@include span(4 of 12);
+	padding: 1em 0 1em 1em;
+	line-height: 1.1;
+	@include vert-rel;
+	display: none;
+	@include respond-to(920){
+		display: block;
+	}
+	@include respond-to(1000){
+		@include span(4 of 12);
+	}
+}
+.newsletter-form{
+	
+	position: relative;
+	padding: 0.5em 1em;
+	
+	@include respond-to(350){
+		@include span(9 of 12);
+		@include vert-rel;
+		padding: 0 1em;
+	}
+	@include respond-to(650){
+		@include span(7 of 12);
+	}
+	@include respond-to(920){
+		@include span(4 of 12);
+		padding: 1.75em 0;
+		h6{
+			display: none;
+		}
+	}
+	@include respond-to(1000){
+		@include span(4 of 12);
+		
+	}
+	h6{
+		margin-bottom: 0.3em;
+	}
+	label{
+		display: none;
+	}
+	.inputset{
+		height: 2.2em;
+		width: calc(100% - 62px);
+		float: left;
+		@include respond-to(480){
+			width: calc(100% - 90px);
+			height: 3em;
+		}
+		input{ 
+			width: 100%;
+			border: none;
+			padding: 0.5em;
+			@include respond-to(650){
+				padding: 0.8em;
+			}
+		}
+	}
+
+	.form_submit{
+		height: 2.2em;
+		width: 62px;
+		float: left;
+		@include respond-to(480){
+			width: 90px;
+			height: 3em;
+		}
+		input{
+			padding: 0 0.5em;
+			@include respond-to(650){
+				padding: 0.8em;
+			}
+		}
+	}
+
+}
+
+.social-icons{
+	height: 100%;
+	display: none;
+	@include respond-to(350){
+		@include span(3 of 12 last);
+		display: block;
+		height: 100%;
+	}
+	@include respond-to(650){
+		@include span(5 of 12 last);
+
+	}
+	@include respond-to(920){
+		@include span(4 of 12 last);
+
+	}
+	// @include respond-to(1000){
+	// 	@include span(4 of 12 last);
+
+	// }
+	>div{
+		float: left;
+		width: 50%;
+		height: 50%;
+		display: block;
+		//padding-bottom: 25%;
+		background: blue;
+		position: relative;
+		a{
+			display: block;
+			height: 100%;
+			width: 100%;
+		}
+		@include respond-to(650){
+			width: 25%;
+			height: 100%;
+		}
+		&:hover{
+			z-index: 3;
+			transform: scale(1.1);
+			transition: all 200ms ease;
+		}
+		&.facebook{
+			background: $facebook;
+			&:hover{
+				background: lighten(saturate($facebook, 10%),5%);
+			}
+		}
+		&.twitter{
+			background: $twitter;
+			&:hover{
+				background: lighten(saturate($twitter, 10%),5%);
+			}
+		}
+		&.youtube{
+			background: $youtube;
+			&:hover{
+				background: lighten(saturate($youtube, 10%),5%);
+			}
+		}
+		&.mail{
+			background: $alt-color;
+			&:hover{
+				background: lighten(saturate($alt-color, 10%),5%);
+			}
+		}
+	}
+	svg{
+		position: absolute;
+		top:50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		fill: #fff;
+		height: 1.5em;
+		width: 1.5em;
+		@include respond-to(650){
+			height: 2em;
+			width: 2em;
+		}
+		@include respond-to(1000){
+			height: 3em;
+			width: 3em;
+		}
+	}
+}
+
+
+.panel-wrap{
+	@include respond-to(480){
+		box-shadow: 0 2px 4px 0 rgba(0,0,0,0.05);
+	}
+}
+
+.panel{
+	margin: 0.5em 0;
+	overflow: hidden;
+	@include respond-to(350){
+		height: 100%;
+		height: 17em;
+	}
+	@include respond-to(480){
+		margin: 0;
+	}
+	background: $lightGrey;
+	@include respond-to(1040){
+		height: 20em
+	}
+	a{
+		&:after{
+			content: "";
+			height: 2px;
+			width: 0;
+			margin: auto;
+			background-color: currentColor;
+			display: block;
+			transition: width 300ms ease;
+		}
+		&:hover{
+			&:after{
+				width: 100%;
+			}
+		}
+	}
+}
+
+.panel__videos, .panel__stories, .panel__feature{
+	@include respond-to(1040){
+		height: 18em;
+	}
+	p{
+		margin-bottom: 0;
+	}
+}
+
+.panel__double{
+	//@include span(12 of 12 0);
+	@include respond-to(1040){
+		@include span(8 of 12 0);
+	}
+
+}
+.panel__single{
+	@include respond-to(650){
+		@include span(6 of 12 0);
+	}
+	@include respond-to(1040){
+		@include span(4 of 12 0);
+	}
+	.inner-half{
+		padding: 1em;
+		@include respond-to(480){
+			padding: 2em 1.5em;
+		}
+		@include respond-to(650){
+			padding: 1em;
+		}
+		@include respond-to(1200){
+			padding: 2em 1.5em;
+		}
+	}
+}
+.panel-half{
+	@include respond-to(1040){
+		@include span(6 of 12 0);
+	}
+}
+
+.inner-half{
+	@include respond-to(350){
+		@include span(6 of 12 0);
+		&.panel__image{
+			@include span(6 of 12 last 0);
+		}
+	}
+}
+.panel-blue{
+	background-color: $base-color;
+	h1,h2,h3,h4,h5,h6,p,a{
+		color: #fff;
+	}
+}
+.panel__content, .panel__image{
+	height: 16em;
+	@include respond-to(350){
+		height: 100%;
+	}
+}
+.panel__content{
+	position: relative;
+	padding: 1em;
+	@include respond-to(480){
+		padding: 2em 1.5em;
+	}
+	@include respond-to(650){
+		padding: 1em;
+	}
+	@include respond-to(1200){
+		padding: 2em 1.5em;
+	}
+	a{
+		font-family: $main-font-bold;
+		position: absolute;
+		bottom: 1em;
+		@include respond-to(480){
+			bottom: 2em;
+		}
+		@include respond-to(650){
+			bottom: 1em;
+		}
+		@include respond-to(1200){
+			bottom: 2em;
+		}
+	}
+	h6{
+		font-family: $main-font;
+	}
+	.title{
+		text-transform: uppercase;
+		border-bottom: 1px solid currentColor;
+		font-family: $cond-font-bold;
+		margin-bottom: 0.5em;
+		padding-bottom: 0.5em;
+		line-height: 1.1;
+	}
+}
+
+.panel__why-jet{
+	@include respond-to(0to650){
+		h3{
+			font-size: ms(3);
+		}
+		h6{
+			font-size: ms(0);
+		}
+	}
+}
+
+.panel__why-jet, .panel__feature, .panel__stories, .panel__training{
+	.panel__content{
+		&:after{
+			content: "";
+			height: 0;
+			width: 0;
+			border: 1em solid transparent;
+			border-bottom-color: $base-color;
+			position: absolute;
+			left: 50%;
+			transform: translate(-50%, 0);
+			top: -2em;
+			@include respond-to(350){
+				border-left-color: $base-color;
+				border-bottom-color: transparent;
+				left: auto;
+				right: -2em;
+				top: 50%;
+				transform: translate(0, -50%);
+			}
+		}
+	}
+}
+.panel__stories{
+	
+	.panel__content{
+		border: 1px solid #ccc;
+		&:after{
+			border-bottom-color: $lightGrey;
+			@include respond-to(350){
+				border-bottom-color: transparent;
+				border-left-color: $lightGrey;
+			}
+			
+		}
+	}
+}
+.panel__vacancies{
+	box-shadow: inset 0 0 0 5px #999;
+	.panel__content{
+		@include respond-to(0to350){
+			height: 17em;
+		}
+	}
+}
+.title-box{
+	padding: 1.1em 2em;
+	background-color: #999;
+	h6{
+		font-family: $cond-font-bold;
+		color: #fff;
+		text-transform: uppercase;
+		margin-bottom: 0;
+	}
+	&--tl{
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	&--bl{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+}
+.latest-jobs{
+	margin-top: 4em;
+	// @include respond-to(768){
+	// 	margin-top: 4em;
+	// }
+}
+.job-item{
+	font-size: ms(0);
+	&:first-child{
+		border-bottom: 1px solid #ccc;
+		padding-bottom: 0.75em;
+		margin-bottom: 0.75em;
+	}
+}
+.latestJobItemTitle{
+	font-family: $main-font-bold;
+}
+.panel__videos{
+	.panel__content{
+		box-shadow: inset 0 0 0 5px #999;
+	}
+	svg{
+		fill: #fff;
+		height: 5em;
+		@include respond-to(480){
+			height: 7.5em;
+		}
+	}
+	.video-icon{
+		@include center-abs;
+		height: 5em;
+		width: 5em;
+		@include respond-to(480){
+			height: 7.5em;
+			width: 7.5em;
+		}
+	}
+	a{
+		bottom: auto;
+		&:after{
+			width: 0;
+			height: 0;
+		}
+	}
+}
+
+.pull-quote{
+	margin: 2.5em auto;
+	text-align: center;
+	@include respond-to(480){
+		margin: 4em auto;
+	}
+	h3{
+		font-family: $main-font-bold;
+		font-size: ms(3);
+		margin-bottom: 0;
+		@include respond-to(480){
+			font-size: ms(4);
+		}
+	}
+}
+
+.panel__testimonials{
+	border: 1px solid #ccc;
+	.panel__content{
+		height: auto;
+		padding-bottom: 2em;
+		@include respond-to(650){
+			padding: 2em 3em; 
+		}
+	}
+	@include respond-to(0to1040){
+		height: auto;
+	}
+}
+
+.panel__training, .panel__testimonials{
+	@include respond-to(650){
+		height: 15em;
+	}
+	@include respond-to(1040){
+		height: 19em;
+	}
+	h4.title{
+		margin-bottom: 0.35em;
+		padding-bottom: 0.15em;
+		font-size: ms(2);
+		@include respond-to(1040){
+			font-size: ms(3);
+			margin-bottom: 0.5em;
+			padding-bottom: 0.5em;
+		}
+	}
+	h6{
+		font-size: ms(0);
+		@include respond-to(1200){
+			font-size: ms(1);
+		}
+	}
+}
+.testimonial-carousel, .friends-carousel{
+	height: 100%;
+	.owl-controls{
+		bottom: -1.5em;
+		@include respond-to(650){
+			bottom: -1.5em;
+		}
+		@include respond-to(1040){
+			bottom: -2em;
+		}
+	}
+	.owl-dots .owl-dot{
+		span{
+			background: #ccc;
+		    border-radius: 30px;
+		    display: block;
+		    height: 7px;
+		    margin: 5px 7px;
+		    transition: opacity 200ms ease 0s;
+		    width: 7px;
+		}
+		&.active{
+			span{
+				background: #666;
+			}
+		}
+	}
+}
+.testimonial-item{
+	padding-top: 1em;
+	h6{
+		font-family: $main-font-bold;
+		margin-bottom: 0;
+	}
+	p{
+		margin-bottom: 1em;
+		@include respond-to(1040){
+			margin-bottom: 1.5em;
+		}
+	}
+}
+.panel__feature{
+	.panel__content{
+		float: right;
+		@include respond-to(650){
+			float: left;
+		}
+		&:after{
+			content: "";
+			height: 0;
+			width: 0;
+			border: 1em solid transparent;
+			border-bottom-color: $base-color;
+			position: absolute;
+			top: -2em;
+			transform: translate(-50%, 0);
+			@include respond-to(350){
+				left: -2em;
+				top: 50%;
+				transform: translate(0, -50%);
+				border-bottom-color: transparent;
+				border-right-color: $base-color;
+			}
+			@include respond-to(650){
+				left: auto;
+				right: -2em;
+				border-left-color: $base-color;
+				border-right-color: transparent;
+			}
+		}
+	}
+	.panel__image{
+		@include respond-to(350){
+			float: left;
+		}
+		@include respond-to(650){
+			float: right;
+		}
+	}
+}
+.panel__feature, .panel__stories{
+	.panel__content{
+		@include respond-to(0to350){
+			height: 14em;
+		}
+	}
+
+}
+
+
+

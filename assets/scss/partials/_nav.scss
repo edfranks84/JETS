@@ -1,0 +1,486 @@
+/* ---------------------------------------------- *\
+
+  Partial: nav
+
+  All navigation styles here. This is sort that we can try keep things seperated and easy to maintain. You can
+  include all global navigation styles here. 
+
+\* ---------------------------------------------- */
+
+
+
+header{
+	width: 100%;
+	background-color: #fff;
+	@include clearfix;
+	z-index: 10;
+	position: relative;
+	@include site-container;
+	height: 6em;
+	@include respond-to(350){
+		height: 7.5em;
+	}
+	@include respond-to(650){
+		height: auto;
+	}
+	@include respond-to(880){
+		height: 7.5em;
+	}
+	@include respond-to(1100){
+		height: 8.5em;
+	}
+}
+
+.logo{
+	@include span(8 of 12);
+	padding: 0.5em 0;
+	position: relative;
+	height: 100%;
+	margin: auto;
+	img{
+		max-height: 6.5em;
+		max-width: 100%;
+		height: auto;
+		width: auto;
+		@include respond-to(880){
+			height: 7em;
+			@include vert-rel;
+		}
+	}
+	@include respond-to(650){
+		width: 18em;
+		margin: auto;
+		float: none;
+	}
+	@include respond-to(880){
+		@include span(3 of 12 0);
+	}
+}
+.nav-wrap{
+	height: 100%;
+	@include span(4 of 12 last 0);
+	@include respond-to(650){
+		float: none;
+		text-align: center;
+		width: 100%;
+	}
+	@include respond-to(880){
+		@include span(9 of 12 last 0);
+		text-align: left;
+	}
+}
+.main-nav{
+	margin: auto;
+	display: none;
+	line-height: 0;
+	@include respond-to(650){
+		display: block;
+	}
+	@include respond-to(880){
+		float: right;
+	}
+}
+.nav-wrap{
+	ul.menu{
+		display: inline-block;
+		@include clearfix;
+		@include respond-to(880){
+			width: 100%;
+		}
+		>li{
+			line-height: 1.2;
+			float: left;
+			display: block;
+			margin-right: 0.3em;
+			padding: 0 0.5em;
+			height: 4em;
+			position: relative;
+			@include respond-to(880){
+				height: 7.5em;
+			}
+			@include respond-to(1040){
+				padding: 0 0.7em;
+			}
+			@include respond-to(1100){
+				height: 8.5em;
+			}
+			@include respond-to(1280){
+				padding: 0 1.35em;
+			}
+			&:before{
+				content: "";
+				z-index: 1;
+				height: 5px;
+				width: 100%;
+				position: absolute;
+				bottom: 0;
+				//background-color: $base-color;
+				left: 0;
+				right: 0;
+				display: block;
+			}
+			&#menu0{
+				@include nav-color($base-color);
+			}
+			&#menu1{
+				@include nav-color(#259523);
+			}
+			&#menu2{
+				@include nav-color(#ffcd00);
+			}
+			&#menu3{
+				@include nav-color(#ff7000);
+			}
+			&#menu4{
+				@include nav-color(#fe2700);
+			}
+			&#menu5{
+				@include nav-color(#8a009a);
+			}
+			&#menu6{
+				@include nav-color(#002ea4);
+			}
+
+			&:last-child{
+				margin-right: 0;
+			}
+			>a{
+				position: relative;
+				top: 50%;
+				transform: translateY(-50%);
+				color: $black;
+				font-family: $cond-font-bold;
+				text-transform: uppercase;
+				font-size: ms(-1);
+				width: 100%;
+				padding: 1em 0;
+				z-index: 2;
+				display: block;
+				@include respond-to(880){
+					padding: 2.5em 0 1.5em;
+				}
+				@include respond-to(1040){
+					font-size: ms(0);
+					padding: 2em 0;
+				}
+				@include respond-to(1100){
+					padding: 3em 0;
+				}
+			}
+			
+			>ul{
+				text-align: left;
+				display: none;
+				position: absolute;
+				top: 100%;
+				min-width: 15em;
+				background-color: #fff;
+				box-shadow: 0 2px 3px 1px rgba(0,0,0,0.1);
+				padding: 6px 3px;
+				padding-left: 6px;
+				left: 0;
+				li{
+					width: 100%;
+					padding: 0;
+					a{
+						color: $black;
+						padding: 0.4em 0.7em;
+						display: block; 
+						font-family: $cond-font;
+						&:hover{
+							color: $base-color;
+						}
+					}
+				}
+			}
+			&:hover{
+				
+				@include respond-to(880){
+					&:before{
+						animation: height-anim 200ms ease-in-out 0ms forwards; 
+					}
+					>a{
+						color: #fff;
+					}
+				}
+				ul{
+					display: block;
+				}
+			}
+			
+		}
+	}
+}
+@keyframes height-anim{
+    100%{
+      height: 100%;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.burger {
+    width: 4em;
+    height: 4em;
+    display: inline-block;
+    position: relative;
+    transition: all 0.4s ease-in-out;
+    transition-timing-function: cubic-bezier(0.61, 0.04, 0.17, 1.32);
+    .middle {
+        left: -0.25em;
+        top: 50%;
+        width: 4.5em;
+        height: 0.5em;
+        position: absolute;
+        margin-top: -0.25em;
+        display: inline-block;
+        border-radius: 0.5em;
+        transition: all 0.4s ease-in-out;
+        background: $base-color;
+    }
+    &:after,
+    &:before {
+        content: "";
+        width: 4.5em;
+        height: 0.5em;
+        left: -0.25em;
+        position: absolute;
+        border-radius: 0.5em;
+        background: $base-color;
+        transform-origin: 50%, 50%, 0;
+        transition: all 0.4s ease-in-out;
+    }
+    &:after {
+        bottom: 0;
+    }
+    &:before {
+        top: 0;
+    }
+}
+
+.nav-button {
+	float: right;
+    font-size: 0.5em;
+    width: 6em;
+    height: 5em;
+    line-height: 1em;
+    padding: 0 1em 1em;
+    margin: 0 auto 0.6em;
+    display: inline-block;
+    position: relative;
+    transition: all 0.4s ease-in-out;
+    top: 50%;
+    right: 0.5em;
+    //margin-right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    @include respond-to(650){
+    	display: none;
+    }
+    .show-menu & {
+        cursor: pointer;
+        &:before {
+            animation: pointer-ball (0.4s * 0.75) ease 1;
+            animation-timing-function: cubic-bezier(0.61, 0.04, 0.17, 1.32);
+        }
+        .burger {
+            @include transform(rotateZ(360deg));
+            &.cross {
+            	.middle, &:after, &:before {
+	                background: $alt-color;
+	            }
+	            .middle {
+	                opacity: 0;
+	            }
+	            &:after {
+	                bottom: 1.75em;
+	                transform: rotate(135deg);
+	            }
+	            &:before {
+	                top: 1.75em;
+	                box-shadow: 0 0 0 white;
+	                transform: rotate(45deg);
+	            }
+            }   
+        }
+    }
+}
+
+@keyframes pointer-ball {
+    0%, 100% {
+        transform: scale(1);
+    }
+    80% {
+        transform: scale(2);
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+.menu-wrap{
+	display: block;
+	width: 30em;
+	background-color: #292929;
+	position: absolute;
+	overflow: hidden;
+	left: 0;
+	height: 100%;
+	transform: translateY(-100%);
+	.show-menu &{
+		transform: translateY(0);
+	}
+	@include respond-to(650){
+		display: none;
+	}
+}
+.mobile-menu{
+	height: 100%;
+    overflow-y: scroll;
+    padding-right: 30px;
+    width: 300px;
+    
+    .menu{
+    	>li{
+    		width: 100%;
+    		border-bottom: 1px solid #666;
+    		a{
+    			font-size: ms(0);
+    			padding: 0.3em 0;
+    			font-family: $main-font;
+    			display: block;
+    		}
+    		>a{
+				font-family: $cond-font-bold;
+    		}
+    		ul{
+    			display: none;
+    		}
+    		&#menu0{
+				@include mobile-nav-color($base-color);
+			}
+			&#menu1{
+				@include mobile-nav-color($jockeys);
+			}
+			&#menu2{
+				@include mobile-nav-color($employers);
+			}
+			&#menu3{
+				@include mobile-nav-color($about);
+			}
+			&#menu4{
+				@include mobile-nav-color($awards);
+			}
+			&#menu5{
+				@include mobile-nav-color($news);
+			}
+			&#menu6{
+				@include mobile-nav-color($contact);
+			}
+    	}
+	}
+	.parent{
+		position: relative;
+		>a{
+
+			&:after{
+				content: url("/jets-uk-org/_img/images/down.png");
+				position: absolute;
+				top: 4px;
+				right: 0;
+				display: block;
+				z-index: -1;
+				opacity: 0.75;
+				transition: transform 200ms ease;
+			}
+		
+			&.open{
+				&:after{
+					transform: rotate(180deg);
+
+				}
+			}
+		}
+		ul{
+	    	padding-left: 0.6em;
+	    	font-size: 0.85em;
+	    }
+	}
+    a{
+    	color: #fff;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Close Button */
+.close-button {
+	width: 2em;
+	height: 2em;
+	position: absolute;
+	right: 1em;
+	top: 1em;
+	overflow: hidden;
+	text-indent: 1em;
+	font-size: 0.75em;
+	border: none;
+	background: transparent;
+	color: transparent;
+}
+
+.close-button::before,
+.close-button::after {
+	content: '';
+	position: absolute;
+	width: 3px;
+	height: 100%;
+	top: 0;
+	left: 50%;
+	background: #bdc3c7;
+}
+
+.close-button::before {
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.close-button::after {
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+/* Menu */
+.menu-wrap {
+	position: absolute;
+	z-index: 1001;
+	width: 300px;
+	height: 100%;
+	//background: #373a47;
+	padding: 3em 1.5em 0;
+	font-size: 1.15em;
+	transform: translate3d(-320px,0,0);
+	transition: transform 0.4s;
+	transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+	border-top: 3px solid $base-color;
+}

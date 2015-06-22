@@ -1,0 +1,116 @@
+/* ---------------------------------------------- *\
+
+  Partial: typography
+
+  I set all typographic styles here. First we list our variables such as fonts (maybe we're using some @font-face) and
+  additionally and maps we might want to use. Then we specificy the typographic scales we want.
+
+\* ---------------------------------------------- */
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/jets-uk-org/_img/fonts/roboto-regular.eot');
+    src: url('/jets-uk-org/_img/fonts/roboto-regular.eot?#iefix') format('embedded-opentype'),
+         url('/jets-uk-org/_img/fonts/roboto-regular.woff') format('woff'),
+         url('/jets-uk-org/_img/fonts/roboto-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Roboto-Italic';
+    src: url('/jets-uk-org/_img/fonts/roboto-italic.eot');
+    src: url('/jets-uk-org/_img/fonts/roboto-italic.eot?#iefix') format('embedded-opentype'),
+         url('/jets-uk-org/_img/fonts/roboto-italic.woff') format('woff'),
+         url('/jets-uk-org/_img/fonts/roboto-italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url('/jets-uk-org/_img/fonts/roboto-bold.eot');
+    src: url('/jets-uk-org/_img/fonts/roboto-bold.eot?#iefix') format('embedded-opentype'),
+         url('/jets-uk-org/_img/fonts/roboto-bold.woff') format('woff'),
+         url('/jets-uk-org/_img/fonts/roboto-bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'RobotoCond';
+    src: url('/jets-uk-org/_img/fonts/robotocondensed-regular.eot');
+    src: url('/jets-uk-org/_img/fonts/robotocondensed-regular.eot?#iefix') format('embedded-opentype'),
+         url('/jets-uk-org/_img/fonts/robotocondensed-regular.woff') format('woff'),
+         url('/jets-uk-org/_img/fonts/robotocondensed-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'RobotoCond-Bold';
+    src: url('/jets-uk-org/_img/fonts/robotocondensed-bold.eot');
+    src: url('/jets-uk-org/_img/fonts/robotocondensed-bold.eot?#iefix') format('embedded-opentype'),
+         url('/jets-uk-org/_img/fonts/robotocondensed-bold.woff') format('woff'),
+         url('/jets-uk-org/_img/fonts/robotocondensed-bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+h1, h2, h3, h4, h5, h6{
+	line-height: 1.4;
+	color: #050505;
+	font-family: $main-font;
+	margin-bottom: 0.5em;
+}
+
+h1{
+	font-family: $cond-font;
+	font-size: ms(6);
+	line-height: 1.2;
+}
+
+h2{
+	font-family: $main-font-bold;
+	font-size: ms(5);
+	line-height: 1.2;
+}
+
+h3{
+	font-family: $cond-font-bold;
+	font-size: ms(3);
+	line-height: 1.2;
+	@include respond-to(480){
+		font-size: ms(4);
+	}
+}
+
+h4{
+	font-family: $main-font-bold;
+	font-size: ms(3);
+}
+
+h5{
+	font-family: $main-font-bold;
+	font-size: ms(2);
+}
+
+h6{
+	font-family: $main-font-bold;
+	font-size: ms(1);
+}
+p{
+	font-family: $main-font;
+	font-size: ms(0);
+	line-height: 1.6;
+	margin-bottom: 1.5em;
+}
+
+b{
+	font-family: $main-font-bold;
+}

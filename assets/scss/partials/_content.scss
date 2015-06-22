@@ -1,0 +1,191 @@
+.inner-hero__wrap{
+	height: 12em;
+	overflow: hidden;
+	position: relative;
+	@include respond-to(480){
+		height: 14em;
+	}
+	@include respond-to(650){
+		height: 18em;
+	}
+}
+.inner-hero__image{
+	height: 100%;
+	width: 100%;
+	.jockeys-sec &{
+		&:after{
+			width: 100%;
+			height: 100%;
+			content: "";
+			display: block;
+			background-color: rgba($jockeys, 0.9);
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0.95;
+		}
+	}
+}
+
+.inner-hero__text{
+	position: absolute;
+	top: 60%;
+	left: 5%;
+	z-index: 2;
+	overflow: hidden;
+	h1{
+		color: #fff;
+		text-transform: uppercase;
+		font-size: ms(4);
+		margin: 0;
+		line-height: 1.2;
+		font-family: $cond-font-bold;
+		text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.25);
+	}
+	@include respond-to(350){
+		h1{
+			font-size: ms(5);
+		}
+	}
+	@include respond-to(1200){
+		h1{
+			font-size: ms(6);
+		}
+	}
+}
+
+.breadcrumb-wrap{
+	padding: 0.5em 0;
+	border-bottom: 1px solid #ccc;
+	@include respond-to(650){
+		padding: 1em 0;
+	}
+	@include respond-to(650){
+		padding: 1.5em 0;
+	}
+	a{
+		color: #333;
+		font-family: $main-font;
+		font-size: 14px;
+		@include respond-to(650){
+			font-size: ms(0);
+		}
+		&:hover{
+			color: $base-color;
+		}
+	}
+}
+.siteBreadcrumbs{
+	color: #888;
+}
+.content{
+	width: 90%;
+	margin: auto;
+	max-width: 1040px;
+	@include clearfix;
+}
+.content-intro{
+	padding: 2em 0em;
+	@include respond-to(480){
+		padding: 2em;
+	}
+	@include respond-to(650){
+		padding: 4em;
+	}
+}
+.intro-quote{
+	font-size: ms(1);
+	font-family: $main-font-bold;
+	text-align: center;
+	@include respond-to(650){
+		font-size: ms(3);
+	}
+}
+.content__top-image {
+	margin-bottom: 1em;
+	@include respond-to(650){
+		margin-bottom: 2em;
+	}
+}
+.page-link-wrap{
+	padding: 0.5em 0;
+	max-width: 1080px;
+	width: 94%;
+	@include respond-to(650){
+		padding: 1em 0;
+	}
+}
+.page-link{
+	@include span(6 of 12 inside);
+	&:nth-child(2){
+		.page-link-inner{
+			background-color: $base-color-dark;
+		}
+	}
+}
+.page-link-inner{
+	padding: 0.75em 3em 0.75em 1em;
+	background-color: $base-color;
+	position: relative;
+	@include respond-to(650){
+		padding: 1em 6em 1em 2em;
+	}
+	h4,h5,h6,p,a{
+		color: #fff;
+	}
+	p{
+		display: none;
+		@include respond-to(650){
+    		display: block;
+    	}
+	}
+	h4{
+		font-size: ms(1);
+		@include respond-to(650){
+    		font-size: ms(3);
+    	}
+	}
+	
+}
+
+@keyframe spin{
+	100%{
+		transform: rotate(360deg);
+	}
+}
+
+.link-arrow{
+	height: 2em;
+	width: 2em;
+	padding: 0.25em;
+	display: block;
+	position: absolute;
+	right: 0.5em;
+	top: 50%;
+	transform: translateY(-50%);
+	fill: #fff;
+	@include respond-to(650){
+		height: 3em;
+		width: 3em;
+		padding: 0.5em;
+		right: 1em;
+	}
+	&:hover{
+		animation: spin 200ms forwards;
+	}
+}
+.main-content{
+	padding-bottom: 1em;
+
+	h3{
+		padding-top: 0.5em;
+		border-bottom: 1px solid #999;
+    	padding-bottom: 0.25em;
+    	margin-bottom: 0.5em;
+    	text-transform: uppercase;
+    	font-family: $cond-font;
+    	@include respond-to(650){
+    		padding-top: 0.75em;
+    	}
+	}
+}

@@ -328,10 +328,14 @@ header{
         opacity: 0;
     }
 }
-
+@keyframes slide-out{
+	100%{
+		transform: translateY(0);
+	}
+}
 
 .menu-wrap{
-	display: block;
+	display: none;
 	width: 30em;
 	background-color: #292929;
 	position: absolute;
@@ -339,8 +343,11 @@ header{
 	left: 0;
 	height: 100%;
 	transform: translateY(-100%);
+	transition: all 200ms linear;
 	.show-menu &{
 		transform: translateY(0);
+		display: inline;
+		transition: all 200ms linear;
 	}
 	@include respond-to(650){
 		display: none;
@@ -348,10 +355,10 @@ header{
 }
 .mobile-menu{
 	height: 100%;
+	display: inline;
     overflow-y: scroll;
     padding-right: 30px;
     width: 300px;
-    
     .menu{
     	>li{
     		width: 100%;
@@ -447,6 +454,7 @@ header{
 	border: none;
 	background: transparent;
 	color: transparent;
+	cursor: pointer;
 }
 
 .close-button::before,

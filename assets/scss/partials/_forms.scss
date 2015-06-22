@@ -34,3 +34,18 @@ input, textarea{
 button{
 	border-radius: 0;
 }
+.inputset{
+	position: relative;
+}
+.form_error_wrap{
+	display: none;
+}
+.form_error_specific{
+	background-color: firebrick;
+    color: white;
+    font-size: 14px;
+    left: 0;
+    padding: 0.2em 0.3em;
+    position: absolute;
+    top: -2em;
+}

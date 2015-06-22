@@ -6,24 +6,28 @@
 		height: 14em;
 	}
 	@include respond-to(650){
-		height: 18em;
+		height: 24em;
 	}
 }
 .inner-hero__image{
 	height: 100%;
 	width: 100%;
-	.jockeys-sec &{
-		&:after{
-			width: 100%;
-			height: 100%;
-			content: "";
-			display: block;
+	&:after{
+		width: 100%;
+		height: 100%;
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0.95;
+		.d12491 &, .d12500 &, .d12508 &{
 			background-color: rgba($jockeys, 0.9);
-			position: absolute;
-			top: 0;
-			left: 0;
-			opacity: 0.95;
 		}
+	}
+	
+	p{
+		margin: 0;
 	}
 }
 
@@ -36,26 +40,27 @@
 	h1{
 		color: #fff;
 		text-transform: uppercase;
-		font-size: ms(4);
+		font-size: ms(3);
 		margin: 0;
 		line-height: 1.2;
 		font-family: $cond-font-bold;
+		//font-family: $main-font;
 		text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.25);
 	}
 	@include respond-to(350){
 		h1{
-			font-size: ms(5);
+			font-size: ms(4);
 		}
 	}
 	@include respond-to(1200){
 		h1{
-			font-size: ms(6);
+			font-size: ms(5);
 		}
 	}
 }
 
 .breadcrumb-wrap{
-	padding: 0.5em 0;
+	padding: 1em 0;
 	border-bottom: 1px solid #ccc;
 	@include respond-to(650){
 		padding: 1em 0;
@@ -65,7 +70,8 @@
 	}
 	a{
 		color: #333;
-		font-family: $main-font;
+		font-family: $main-font-bold;
+		text-transform: uppercase;
 		font-size: 14px;
 		@include respond-to(650){
 			font-size: ms(0);
@@ -77,11 +83,12 @@
 }
 .siteBreadcrumbs{
 	color: #888;
+	text-align: center;
 }
 .content{
 	width: 90%;
 	margin: auto;
-	max-width: 1040px;
+	max-width: 960px;
 	@include clearfix;
 }
 .content-intro{
@@ -93,64 +100,157 @@
 		padding: 4em;
 	}
 }
+
 .intro-quote{
-	font-size: ms(1);
-	font-family: $main-font-bold;
+	font-size: ms(2);
+	font-family: $main-font;
 	text-align: center;
 	@include respond-to(650){
 		font-size: ms(3);
 	}
 }
+
 .content__top-image {
 	margin-bottom: 1em;
 	@include respond-to(650){
 		margin-bottom: 2em;
 	}
 }
+
+.content-intro--side{
+ 	margin: 1.5em auto;
+ 	padding-bottom: 1.5em;
+ 	border-bottom: 1px solid #ddd;
+ 	@include respond-to(650){
+		margin: 3em auto;
+		padding-bottom: 0;
+		border-bottom: none;
+ 	}
+ 	@include respond-to(880){
+		margin: 4em auto;
+		padding-bottom: 0;
+		border-bottom: none;
+ 	}
+}
+
+.intro-quote--side{
+    font-family: $main-font;
+    font-size: ms(1);
+    line-height: 1.5;
+    text-align: center;
+    @include respond-to(480){
+		font-size: ms(2);
+    }
+    @include respond-to(650){
+		float: right;
+    	width: 55%;
+    	text-align: left;
+    }
+	@include respond-to(880){
+		font-size: ms(3);
+	}
+}
+
+.side-image{
+	margin-bottom: 1em;
+	@include respond-to(650){
+		float: left;
+		width: 40%;
+		padding-right: 1em;
+		margin-bottom: 0;
+	}
+}
+
+.side-image img{
+	//border: 5px solid #fff;
+	box-shadow: 1px 3px 6px 1px rgba(0,0,0,0.05);
+}
+
 .page-link-wrap{
-	padding: 0.5em 0;
-	max-width: 1080px;
+	padding: 0 0 2em 0;
+	max-width: 990px;
 	width: 94%;
 	@include respond-to(650){
-		padding: 1em 0;
+		padding: 0 0 3em 0;
 	}
 }
 .page-link{
+	transition: all 200ms ease-in-out;
+	transform: translate3d(0,0,0);
 	@include span(6 of 12 inside);
+	cursor: pointer;
 	&:nth-child(2){
 		.page-link-inner{
 			background-color: $base-color-dark;
 		}
+	}
+	&:hover{
+		//animation: scale 200ms;
+		transform: scale(1.03);
 	}
 }
 .page-link-inner{
 	padding: 0.75em 3em 0.75em 1em;
 	background-color: $base-color;
 	position: relative;
+	box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1);
 	@include respond-to(650){
 		padding: 1em 6em 1em 2em;
+	}
+	&:hover{
+		box-shadow: 0 2px 7px 0 rgba(0,0,0,0.2);
 	}
 	h4,h5,h6,p,a{
 		color: #fff;
 	}
 	p{
 		display: none;
+		margin-bottom: 0;
 		@include respond-to(650){
     		display: block;
     	}
 	}
 	h4{
 		font-size: ms(1);
+		margin-bottom: 0;
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
 		@include respond-to(650){
     		font-size: ms(3);
+    		font-size: ms(1);
+    		margin-bottom: 0.5em;
+    		top: auto;
+    		transform: translateY(0);
     	}
 	}
 	
 }
 
-@keyframe spin{
+@keyframes spin{
 	100%{
 		transform: rotate(360deg);
+	}
+}
+
+@keyframes scale{
+	100%{
+		transform: scale(1.1);
+	}
+}
+
+@keyframes slide-off-on{
+	50%{
+		transform: translateX(100%);
+		opacity: 1;
+	}
+	51%{
+		opacity: 0;
+		transform: translateX(-100%);
+	}
+	100%{
+		opacity: 1;
+		transform: translateX(0);
 	}
 }
 
@@ -164,19 +264,30 @@
 	top: 50%;
 	transform: translateY(-50%);
 	fill: #fff;
+
+	//@include link-line;
 	@include respond-to(650){
 		height: 3em;
 		width: 3em;
 		padding: 0.5em;
 		right: 1em;
 	}
-	&:hover{
-		animation: spin 200ms forwards;
+	svg{
+		transform-origin: 50% 50%;
+		transition: all 100ms ease-in-out;
+		opacity: 0.75;
+		transform: translate3d(0,0,0);
+		&:hover{
+			transform: scale(1.05);	
+			opacity: 1;
+		}
 	}
 }
 .main-content{
 	padding-bottom: 1em;
-
+	@include respond-to(880){
+		padding-bottom: 3em;
+	}
 	h3{
 		padding-top: 0.5em;
 		border-bottom: 1px solid #999;
@@ -187,5 +298,104 @@
     	@include respond-to(650){
     		padding-top: 0.75em;
     	}
+	}
+	h4{
+		padding-top: 0.75em;
+		border-bottom: 1px solid #999;
+		padding-bottom: 0.25em;
+		margin-bottom: 0.5em;
+		text-transform: uppercase;
+		font-family: 'RobotoCond', arial, sans-serif;
+	}
+	ul{
+		margin: 1em 1.5em;
+	}
+	li{
+		padding-bottom: 0.5em;
+	}
+}
+
+.social-wrapper{
+	width: 100%;
+	background: #707070;
+	padding: 1em 0;
+	@include respond-to(650){
+		padding: 1.5em 0;
+	}
+	@include respond-to(880){
+		padding: 2.5em 0;
+	}
+}
+
+.on-course__wrapper{
+	ul{
+		margin: 1em 0em;
+		@include respond-to(480){
+			 margin: 1em 1.5em;
+		}
+	}
+	li{
+		width: 100%;
+		border-bottom: 1px solid #ccc;
+		margin: 0;
+		padding: 0.5em;
+		@include clearfix;
+		>div{
+			display: inline-block;
+		}
+		&:last-child{
+			border-bottom: none;
+		}
+
+	}
+	.date{
+		width: 4em;
+		font-family: $main-font-bold;
+	}
+}
+
+ul.training-list{
+	margin: 1em 0;
+	@include respond-to(650){
+		margin: 1em 1.5em;
+	}
+	li{
+		padding: 0.5em 0.5em;
+		border-bottom: 1px solid #ccc;
+		@include clearfix;
+		@include respond-to(650){
+			padding: 0.5em 1em;
+		}
+		&:nth-child(even){
+			background-color: #f3f3f3;
+		}
+	}
+	a{
+		text-align: right;
+		width: 2.5em;
+		float: right;
+		font-family: $main-font-bold;
+	}
+	strong{
+		font-family: $main-font;
+		float: left;
+		width: calc(100% - 3em);
+	}
+}
+
+.forthcoming-courses{
+	width: 100%;
+	table-layout:fixed;
+	border-collapse: collapse;
+	@include table-stripe;
+	th{
+		background-color: #888;
+		color: #fff;
+		font-family: $main-font-bold;
+		border-color: #777!important;
+	}
+	td,th{
+		padding: 0.5em;
+		border: 1px solid #ddd;
 	}
 }

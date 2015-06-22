@@ -97,7 +97,7 @@ footer{
 }
 .latest-tweets{
 	@include respond-to(480){
-		padding-top: 3em;
+		padding-top: 0em;
 	}
 	@include respond-to(920){
 		padding-top: 0;
@@ -112,6 +112,9 @@ footer{
 		margin-bottom: 0.2em;
 		padding-bottom: 0.2em;
 		border-bottom: 1px solid #ccc;
+	}
+	.timePosted{
+		font-family: $main-font-bold;
 	}
 }
 

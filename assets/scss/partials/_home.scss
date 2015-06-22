@@ -208,6 +208,12 @@
 			}
 		}
 	}
+	.form_error_specific{
+		top: -4em;
+		@include respond-to(920){
+			top: -2em;
+		}
+	}
 
 }
 
@@ -286,6 +292,7 @@
 		fill: #fff;
 		height: 1.5em;
 		width: 1.5em;
+		display: block;
 		@include respond-to(650){
 			height: 2em;
 			width: 2em;
@@ -318,22 +325,7 @@
 	@include respond-to(1040){
 		height: 20em
 	}
-	a{
-		&:after{
-			content: "";
-			height: 2px;
-			width: 0;
-			margin: auto;
-			background-color: currentColor;
-			display: block;
-			transition: width 300ms ease;
-		}
-		&:hover{
-			&:after{
-				width: 100%;
-			}
-		}
-	}
+	
 }
 
 .panel__videos, .panel__stories, .panel__feature{
@@ -392,7 +384,7 @@
 		color: #fff;
 	}
 }
-.panel__content, .panel__image{
+.panel__content, .panel__image, .jobs-content{
 	height: 16em;
 	@include respond-to(350){
 		height: 100%;
@@ -412,6 +404,7 @@
 	}
 	a{
 		font-family: $main-font-bold;
+		font-size: 1em;
 		position: absolute;
 		bottom: 1em;
 		@include respond-to(480){
@@ -422,6 +415,20 @@
 		}
 		@include respond-to(1200){
 			bottom: 2em;
+		}
+		&:after{
+			content: "";
+			height: 2px;
+			width: 0;
+			margin: auto;
+			background-color: currentColor;
+			display: block;
+			transition: width 300ms ease;
+		}
+		&:hover{
+			&:after{
+				width: 100%;
+			}
 		}
 	}
 	h6{
@@ -436,6 +443,66 @@
 		line-height: 1.1;
 	}
 }
+
+.jobs-content{
+
+	position: relative;
+	padding: 1em;
+	@include respond-to(480){
+		padding: 2em 1.5em;
+	}
+	@include respond-to(650){
+		padding: 1em;
+	}
+	@include respond-to(1200){
+		padding: 2em 1.5em;
+	}
+	.job-item-details{
+		color: #050505;
+		&:hover{
+			color: $base-color;
+		}
+	}
+	.latestJobItemLocation{
+		color: #050505;
+		&:hover{
+			color: $base-color;
+		}	
+	}
+}
+
+.jobs-link{
+	
+	font-family: $main-font-bold;
+	position: absolute;
+	bottom: 1em;
+	@include respond-to(480){
+		bottom: 2em;
+	}
+	@include respond-to(650){
+		bottom: 1em;
+	}
+	@include respond-to(1200){
+		bottom: 2em;
+	}
+	&:after{
+		content: "";
+		height: 2px;
+		width: 0;
+		margin: auto;
+		background-color: currentColor;
+		display: block;
+		transition: width 300ms ease;
+	}
+	&:hover{
+		&:after{
+			width: 100%;
+		}
+	}
+
+}
+
+
 
 .panel__why-jet{
 	@include respond-to(0to650){
@@ -515,17 +582,22 @@
 }
 .latest-jobs{
 	margin-top: 4em;
+	@include clearfix;
 	// @include respond-to(768){
 	// 	margin-top: 4em;
 	// }
+	>a{
+		display: block;
+		&:first-child{
+			border-bottom: 1px solid #ccc;
+			padding-bottom: 0.75em;
+			margin-bottom: 0.75em;
+		}
+	}
 }
 .job-item{
 	font-size: ms(0);
-	&:first-child{
-		border-bottom: 1px solid #ccc;
-		padding-bottom: 0.75em;
-		margin-bottom: 0.75em;
-	}
+	
 }
 .latestJobItemTitle{
 	font-family: $main-font-bold;

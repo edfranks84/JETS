@@ -1,0 +1,86 @@
+#s381525{
+	.job-search__wrap{
+		margin-top: 2em;
+		padding: 2em;
+		background-color: $jockeys;
+		@include respond-to(650){
+			padding: 3em;
+		}
+		h3{
+			color: #fff;
+			border-color: #fff;
+			margin-top: 0;
+			padding: 0;
+		}
+	}
+}
+
+.searchform{
+	@include clearfix;
+	
+	>div{
+		@include respond-to(650){
+			@include span(6 of 12 inside);
+		}
+		@include respond-to(1200){
+			@include span(4 of 12 inside);
+		}
+	}
+}
+.searchButton{
+	width: 100%;
+	text-align: center;
+	margin-top: 2.5em;
+	input{
+		line-height: 1;
+		display: inline-block;
+		border: 2px solid #fff;
+		padding: 1em 2em;
+		color: #fff;
+		font-family: $main-font-bold;
+		text-transform: uppercase;
+		box-shadow: none;
+		background: transparent;
+		-webkit-appearance: none;
+		cursor: pointer;
+		&:hover, &:focus{
+			background-color: #fff;
+			color: $jockeys;
+			box-shadow: none;
+		}
+	}
+}
+.searchTitle{
+	height: 1.5em;
+	margin-top: 1em;
+	color: #fff;
+}
+
+
+.jobItem{
+	width: 100%;
+	@include clearfix;
+	padding:2em;
+	background-color: #e1e1e1;
+	&:nth-child(even){
+		background-color: #f3f3f3;
+	}	
+}
+.jobItemLeft{
+	float: left;
+}
+.jobItemRight{
+	float: right;
+}
+.jobItemTitle{
+	font-size: ms(3);
+	font-family: $cond-font-bold;
+	width: 100%;
+	text-transform: uppercase;
+}
+.jobItemSummaryLabel{
+
+}
+.jobItemSummaryValue{
+
+}

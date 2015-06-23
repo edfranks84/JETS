@@ -1,4 +1,4 @@
-input, textarea{
+input, textarea, select{
 	padding: 0.8em;
 	background-color: #fff;
 	border: 1px solid #ccc;
@@ -9,6 +9,10 @@ input, textarea{
 	-webkit-appearance: none;
     -webkit-border-radius:0; 
     border-radius:0;
+    width: 100%;
+}
+select{
+	-webkit-appearance: select;
 }
 
 .form_submit{
@@ -49,3 +53,5 @@ button{
     position: absolute;
     top: -2em;
 }
+
+

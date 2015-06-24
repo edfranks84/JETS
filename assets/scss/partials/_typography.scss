@@ -71,14 +71,20 @@ h1, h2, h3, h4, h5, h6{
 
 h1{
 	font-family: $cond-font;
-	font-size: ms(6);
+	font-size: ms(5);
 	line-height: 1.2;
+	@include respond-to(650){
+		font-size: ms(6);
+	}
 }
 
 h2{
 	font-family: $main-font-bold;
-	font-size: ms(5);
+	font-size: ms(4);
 	line-height: 1.2;
+	@include respond-to(650){
+		font-size: ms(5);
+	}
 }
 
 h3{
@@ -92,7 +98,10 @@ h3{
 
 h4{
 	font-family: $main-font-bold;
-	font-size: ms(3);
+	font-size: ms(2);
+	@include respond-to(650){
+		font-size: ms(3);
+	}
 }
 
 h5{

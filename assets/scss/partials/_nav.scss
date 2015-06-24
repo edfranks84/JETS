@@ -124,21 +124,64 @@ header{
 			}
 			&#menu1{
 				@include nav-color(#259523);
+				ul{
+					a{
+						&:hover{
+							color: $jockeys;
+						}
+					}
+				}
 			}
 			&#menu2{
-				@include nav-color(#ffcd00);
+				@include nav-color($employers);
+				ul{
+					a{
+						&:hover{
+							color: $employers;
+						}
+					}
+				}
 			}
 			&#menu3{
-				@include nav-color(#ff7000);
+				@include nav-color($about);
+				ul{
+					a{
+						&:hover{
+							color: $about;
+						}
+					}
+				}
 			}
 			&#menu4{
-				@include nav-color(#fe2700);
+				@include nav-color($awards);
+				ul{
+					a{
+						&:hover{
+							color: $awards;
+						}
+					}
+				}
 			}
 			&#menu5{
-				@include nav-color(#8a009a);
+				@include nav-color($news);
+				ul{
+					a{
+						&:hover{
+							color: $news;
+						}
+					}
+				}
 			}
 			&#menu6{
 				@include nav-color(#002ea4);
+			}
+			&.liLinkActive{
+				&:before{
+					height: 100%;
+				}
+				>a{
+					color: #fff;
+				}
 			}
 
 			&:last-child{
@@ -216,6 +259,38 @@ header{
       height: 100%;
     }
   }
+
+
+#s373876, #s377748, #s373879, #s373878, #s373880, #s383502, #s383503, #s383568, #s383569, #s381525, #s384051{
+
+	#menu1{
+		&:before{
+			height: 100%;
+		}
+		>a{
+			color: #fff;
+		}
+	}
+}
+
+#s384117{
+	#menu2{
+		&:before{
+			height: 100%;
+		}
+		>a{
+			color: #fff;
+		}
+		ul{
+			a{
+				&:hover{
+					color: $employers;
+				}
+			}
+		}
+	}
+}
+
 
 
 
@@ -430,10 +505,6 @@ header{
     }
 
 }
-
-
-
-
 
 
 

@@ -242,6 +242,7 @@ $prefix-for-spec:      true !default;
 }
 
 @mixin link-line{
+  display: inline-block;
   &:after{
     content: "";
     height: 2px;
@@ -265,3 +266,33 @@ $prefix-for-spec:      true !default;
     }
   }
 }
+
+@mixin page-color($color){
+  .inner-hero__text{
+    background-color: rgba($color, 0.9);
+  }
+  .main-content{
+    a{
+      color: $color;
+      &:hover{
+        color: lighten(saturate($color, 5%),5%);
+      }
+    }
+    h1,h2,h3,h4{
+      color: $color;
+      border-bottom-color: currentColor;
+    }
+
+  }
+  .page-link-inner{
+    background-color: $color;
+  }
+  .page-link{
+    &:nth-child(2){
+      .page-link-inner{
+        background-color: darken($color, 10%);
+      }
+    }
+  }
+}
+

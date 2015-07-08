@@ -10,7 +10,16 @@ input, textarea, select{
     -webkit-border-radius:0; 
     border-radius:0;
     width: 100%;
+    outline: none;
+    &:focus{
+    	border: 1px solid #666;
+    }
 }
+
+textarea{
+	min-height: 8em;
+}
+
 select{
 	-webkit-appearance: select;
 }
@@ -52,6 +61,68 @@ button{
     padding: 0.2em 0.3em;
     position: absolute;
     top: -2em;
+    
 }
 
 
+.contact-form, .signup-form{
+	h3{
+		margin-top: 0;
+		padding-top: 0;
+	}
+	label{ 
+		display: none;
+	}
+	input,textarea,select{
+		border-radius: 3px;
+		padding: 0.95em;
+		margin: 0.5em 0;
+	}
+	input[type="submit"]{
+		padding: 1.25em;
+		font-size: ms(1);
+		border-radius: 3px;
+	}
+}
+
+
+section.form{
+	max-width: 39em;
+	h2{
+		font-family: $main-font-bold;
+		text-transform: uppercase;
+		text-align: center;
+		border-bottom: none;
+		margin-top: 0;
+	}
+	.form_error_specific{
+		top: 0.5em;
+		right: 0;
+		left: auto;
+	}
+}
+
+
+.signup-form{
+	max-width: 39em;
+	margin: auto;
+	margin-top: 3em;
+	.inputset{
+		margin-top: 1em;
+	}
+	.form_error_specific{
+		top: -3px;
+		right: 0;
+		left: auto;
+    }
+    label{
+    	display: block;
+    }
+	h2{
+		font-family: $main-font-bold;
+		text-transform: uppercase;
+		text-align: center;
+		border-bottom: 1px solid currentColor;
+		margin-top: 0;
+	}
+}

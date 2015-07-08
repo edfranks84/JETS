@@ -1,0 +1,167 @@
+.d12543, .d12545{
+	.inner-hero__wrap{
+		height: 8em;
+		@include respond-to(480){
+			height: 10em;
+		}
+		@include respond-to(650){
+			height: 12em;
+		}
+		@include respond-to(1040){
+			height: 16em;
+		}
+	}
+	.inner-hero__text{
+		top: 45%;
+	}
+}
+
+#listNews, #displayIndividualBlogStory{
+	padding: 3em 0;
+	@include clearfix;
+}
+
+.listNewsItem{ 
+	@include clearfix;
+	border-bottom: 1px solid #ccc; 
+	padding-bottom: 2.5em; 
+	margin-bottom: 2.5em; 
+	&:last-of-type{
+		border-bottom: none; 
+		padding-bottom: 0; 
+		margin-bottom: 0; 
+	}
+}
+.newsImageTop{
+	margin-bottom: 1em;
+	//background-color: red; 
+	text-align: center;
+	@include respond-to(480){
+		width: 200px; 
+		float: left; 
+		height: 128px; 
+		margin-bottom: 0;
+		text-align: left;
+		overflow: hidden;
+	}
+	@include respond-to(768){
+		width: 250px; 
+		height: 160px; 
+	}
+	a{
+		display: block;
+	}
+	img{
+		min-height: 100%;
+		min-width: 100%;
+	}
+}
+.newsImageBottom{
+	display: none;
+}
+
+#listNews{
+	.newsSummary,.newsTitle, .newsInfoWrap,.newsSummaryLink{
+		@include respond-to(480){
+			width: calc(100% - 200px); 
+			float: right; 
+			padding-left: 35px;
+		}
+		@include respond-to(768){
+			width: calc(100% - 250px); 
+		}
+		h4{
+			border-bottom: none; 
+			padding-top: 0;
+			line-height: 1.2;
+			margin-bottom: 0.25em;
+
+		}
+	}
+	
+}
+.newsDate,.newsAuthor{
+	margin-top: 0.25em;
+	color: #888;
+	font-size: 14px;
+	font-family: $main-font;
+	margin-bottom: 1em;
+	#displayIndividualBlogStory &{
+		margin-bottom: 0;
+	}
+}
+
+.newsTitle{	
+	font-size: ms(3);
+	line-height: 1;
+	margin: 0;
+
+	a{	
+		font-family: $cond-font-bold;
+		text-transform: uppercase;
+	}
+}
+
+
+.newsDateFull,.newsCategory, .newsAuthor{
+	display: none;
+}
+
+.newsSummary{
+	//font-size: ms(0);
+	margin-bottom: 1em;
+}
+.newsSummaryLink{
+
+	//margin-top: 1em;
+	a{
+		font-family: $main-font-bold;
+	}
+
+}
+
+#displayIndividualBlogStory{
+	max-width: 840px;
+	margin: auto;
+	.newsDate{
+		//margin-bottom: 1.5em;
+		margin-top: 0.2em;
+		font-size: ms(1);
+	}
+	h1{
+		margin-bottom: 0.1em;
+		line-height: 1.1;
+		text-align: center;
+		text-transform: uppercase;
+		font-family: $cond-font-bold;
+		font-size: ms(4);
+		@include respond-to(480){
+			font-size: ms(6);
+		}
+	}
+	.newsInfoWrap{
+		text-align: center;
+		margin-bottom: 2.5em;
+	}
+	p{
+		font-size: 1.0625em;
+		line-height: 1.6;
+	}
+}
+
+.blogSummaryImageStory{
+	margin-bottom: 2.5em;
+	text-align: center;
+}
+
+
+.blogs{
+	.newsDate,.newsAuthor{
+		display: inline-block;
+	}
+	#displayBlogStory{
+		.newsAuthor{
+			font-size: ms(1);
+		}
+	}	
+}

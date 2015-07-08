@@ -1,6 +1,7 @@
 
 .job-content{
 	padding: 0.5em;
+	margin-bottom: 2.5em;
 	width: 90%;
 	@include respond-to(650){
 		
@@ -254,6 +255,13 @@
 			color: #fff!important;
 		}
 	}
+}
+
+.pagOn{
+
+    background: $jockeys;
+    color: #fff;
+
 }
 
 .jobItemWrap{

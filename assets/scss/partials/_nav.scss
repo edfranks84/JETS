@@ -127,7 +127,7 @@ header{
 				ul{
 					a{
 						&:hover{
-							color: $jockeys;
+							background-color: $jockeys;
 						}
 					}
 				}
@@ -137,7 +137,7 @@ header{
 				ul{
 					a{
 						&:hover{
-							color: $employers;
+							background-color: $employers;
 						}
 					}
 				}
@@ -147,7 +147,7 @@ header{
 				ul{
 					a{
 						&:hover{
-							color: $about;
+							background-color: $about;
 						}
 					}
 				}
@@ -157,7 +157,7 @@ header{
 				ul{
 					a{
 						&:hover{
-							color: $awards;
+							background-color: $awards;
 						}
 					}
 				}
@@ -167,7 +167,7 @@ header{
 				ul{
 					a{
 						&:hover{
-							color: $news;
+							background-color: $news;
 						}
 					}
 				}
@@ -216,22 +216,23 @@ header{
 				display: none;
 				position: absolute;
 				top: 100%;
-				min-width: 15em;
+				min-width: 13em;
 				background-color: #fff;
 				box-shadow: 0 2px 3px 1px rgba(0,0,0,0.1);
-				padding: 6px 3px;
-				padding-left: 6px;
+				padding: 10px 4px 10px 0;
+				//padding-left: 4px;
 				left: 0;
 				li{
 					width: 100%;
 					padding: 0;
 					a{
 						color: $black;
-						padding: 0.4em 0.7em;
+						padding: 0.55em 0.7em;
 						display: block; 
 						font-family: $cond-font;
 						&:hover{
 							color: $base-color;
+							color: #fff;
 						}
 					}
 				}
@@ -421,7 +422,7 @@ header{
 	transition: all 200ms linear;
 	.show-menu &{
 		transform: translateY(0);
-		display: inline;
+		display: block;
 		transition: all 200ms linear;
 	}
 	@include respond-to(650){
@@ -430,9 +431,9 @@ header{
 }
 .mobile-menu{
 	height: 100%;
-	display: inline;
+	display: inline-block;
     overflow-y: scroll;
-    padding-right: 30px;
+    padding-right: 55px;
     width: 300px;
     .menu{
     	>li{
@@ -440,7 +441,7 @@ header{
     		border-bottom: 1px solid #666;
     		a{
     			font-size: ms(0);
-    			padding: 0.3em 0;
+    			padding: 0.5em 0;
     			font-family: $main-font;
     			display: block;
     		}
@@ -449,6 +450,7 @@ header{
     		}
     		ul{
     			display: none;
+    			padding-bottom: 0.5em;
     		}
     		&#menu0{
 				@include mobile-nav-color($base-color);
@@ -556,7 +558,7 @@ header{
 	width: 300px;
 	height: 100%;
 	//background: #373a47;
-	padding: 3em 1.5em 0;
+	padding: 3em 1.5em 2em;
 	font-size: 1.15em;
 	transform: translate3d(-320px,0,0);
 	transition: transform 0.4s;

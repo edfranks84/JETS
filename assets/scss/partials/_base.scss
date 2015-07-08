@@ -154,3 +154,13 @@
 			list-style-type: disc;
 		}
 	}
+
+	.no-margin{
+		margin: 0;
+	}
+
+	.border-bottom{
+		padding-bottom: 2em;
+		margin-bottom: 2em;
+		border-bottom: 1px solid #ccc;
+	}

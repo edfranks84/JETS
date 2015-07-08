@@ -328,7 +328,7 @@
 	
 }
 
-.panel__videos, .panel__stories, .panel__feature{
+.panel__videos, .panel__vacancies, .panel__feature{
 	@include respond-to(1040){
 		height: 18em;
 	}
@@ -576,8 +576,14 @@
 	}
 	&--bl{
 		position: absolute;
-		bottom: 0;
+		top: 0;
 		left: 0;
+		@include respond-to(650){
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			top: auto;
+		}
 	}
 }
 .latest-jobs{

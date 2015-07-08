@@ -93,6 +93,7 @@ footer{
 	a{
 		margin-top: 2em;
 		display: block;
+		font-family: $main-font-bold;
 	}
 }
 .latest-tweets{
@@ -105,6 +106,9 @@ footer{
 	p{
 		margin-bottom: 0;
 	}
+	a{
+		word-wrap: break-word;
+	}
 	ul{
 		font-size: 14px;
 	}
@@ -115,6 +119,22 @@ footer{
 	}
 	.timePosted{
 		font-family: $main-font-bold;
+	}
+}
+
+.twitter-link{
+	font-family: $main-font-bold;
+	//font-family: $main-font;
+	// padding: 0.2em 0.75em;
+	// background-color: $twitter;
+	// color: #fff;
+	// display: inline-block;
+	margin-top: 0.75em;
+	display: block;
+	//font-size: ms(-1);
+	&:hover{
+		//background-color: darken($twitter,10%);
+		//color: #fff;
 	}
 }
 
@@ -167,8 +187,10 @@ footer{
 }
 .friends{
 	p{
-		text-align: right;
 		font-size: ms(-1);
+		@include respond-to(480){
+			text-align: right;
+		}
 	}
 	.social-footer{
 		text-align: center;
@@ -236,5 +258,13 @@ footer{
 			right: 0;
 			left: 0;
 		}
+	}
+}
+.friends-link{
+	margin: 0.25em 0 0.75em;
+	display: block;
+	font-family: $main-font-bold;
+	@include respond-to(480){
+		text-align: right;
 	}
 }

@@ -282,8 +282,16 @@ $prefix-for-spec:      true !default;
       color: $color;
       border-bottom-color: currentColor;
     }
-
+    .form_submit{
+      input{
+        background-color: $color;
+        &:hover{
+          background-color: lighten(saturate($color, 5%),5%);
+        }
+      }
+    }
   }
+  
   .page-link-inner{
     background-color: $color;
   }
